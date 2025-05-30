@@ -1,0 +1,30 @@
+database:
+  host: "localhost"
+  port: 5432
+  name: "your_database_name"
+  user: "your_username"
+  password: "your_password"
+
+backup:
+  # Directory where backups will be stored
+  output_dir: "./backups"
+  
+  # Backup frequency (examples: 1h, 30m, 24h, 168h for weekly)
+  frequency: "15m"
+  
+  # Number of days to keep backups (older backups will be deleted)
+  retention_days: 1
+  
+  # Backup format: custom, plain, tar, directory
+  # - custom: PostgreSQL custom format (recommended, compressed)
+  # - plain: SQL text file
+  # - tar: tar archive
+  # - directory: directory format (good for large databases)
+  format: "custom"
+
+logging:
+  # Log level: debug, info, warn, error
+  level: "info"
+  
+  # Log file path (leave empty to log to stdout)
+  file_path: "./backup.log"
